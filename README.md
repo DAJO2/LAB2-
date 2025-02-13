@@ -1,6 +1,6 @@
 # LAB2-Convolución, correlación y transformación 
 ## INTRODUCCION 
-En el análisis de señales y sistemas, sirven para comprender la interacción entre señales y los sistemas que las procesan son fundamentales para múltiples aplicaciones en ingeniería. Se encuentran tres operaciones matemáticas que juegan un papel clave en este estudio: la convolución, la correlación y las transformadas.
+En el análisis de señales y sistemas, sirven para comprender la interacción entre señales y los sistemas que las procesan y que son fundamentales para múltiples aplicaciones en ingeniería. Se encuentran tres operaciones matemáticas que juegan un papel clave en este estudio: la convolución, la correlación y las transformadas.
 La convolución permite determinar cómo un sistema responde a una señal de entrada, siendo esencial en el análisis de sistemas lineales e invariantes en el tiempo (LTI). La correlación, por su parte, mide la similitud entre dos señales a lo largo del tiempo, siendo una herramienta valiosa en el procesamiento de señales, la detección de patrones y la reducción de ruido. Las transformadas por su parte, como la de Fourier, facilitan el análisis de señales en el dominio de la frecuencia. Estas herramientas permiten descomponer señales en sus componentes fundamentales, optimizando la compresión de datos.
 ## PROCEDIMIENTO 
 ### CONVOLUCIÓN
