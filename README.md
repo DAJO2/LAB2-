@@ -103,9 +103,9 @@ freq_std = np.sqrt(np.sum(psd * (f_welch - freq_mean) ** 2) / np.sum(psd))
 - Histograma señal EEG
 ![](https://github.com/DAJO2/LAB2-/blob/main/HISTOGRAMA.png)
 
-- Estadisticos descriptivos
+- Resultados de los estadisticos descriptivos
 
-![](https://github.com/DAJO2/LAB2-/blob/main/Capturadepantalla2025-02-13065636.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/Captura.png)
 #### Requirements:
 - python 3.9
 - matplotlib
