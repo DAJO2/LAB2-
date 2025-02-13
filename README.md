@@ -33,4 +33,4 @@ El cálculo de la convolución se realizó en dos etapas:
     n_y2 = np.arange(len(y2))
     n_y3 = np.arange(len(y3))
 
-```
+```![](https://github.com/DAJO2/LAB2-/blob/main/)
