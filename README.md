@@ -89,7 +89,7 @@ spectrum = np.abs(fft(signal))
 f_welch, psd = welch(signal, fs, nperseg=1024)
 ```
 -Transformada de Furier de la señal EEG
-![](https://github.com/DAJO2/LAB2-/blob/main/SENALFT.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/TRANSFORMADADEFOURIER.png)
 
 -Densidad espectral de potencia(PSD)
 ![](https://github.com/DAJO2/LAB2-/blob/main/SENALFT.png)
