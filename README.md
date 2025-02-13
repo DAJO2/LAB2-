@@ -6,7 +6,7 @@ La convolución permite determinar cómo un sistema responde a una señal de ent
 Se realizó un estudio con tres estudiantes, donde se estableció un sistema y una señal de entrada basados en sus datos personales. Para cada estudiante:
 
 Se definió el sistema h[n] como una secuencia discreta formada por los dígitos de su código de estudiante.
-Se definió la señal de entrada x[n] como la secuencia compuesta por los dígitos de su número de cédula.
+Se definió la señal de entrada x[n] como la secuencia compuesta por los dígitos de su número de identidad.
 A partir de estas secuencias, se obtuvo la señal de salida y[n] mediante la operación de convolución discreta.
 El cálculo de la convolución se realizó en dos etapas:
 - Cálculo manual con sumatorias , aplicando la definición de convolución discreta para encontrar y[n].
@@ -32,5 +32,9 @@ El cálculo de la convolución se realizó en dos etapas:
     n_y1 = np.arange(len(y1))
     n_y2 = np.arange(len(y2))
     n_y3 = np.arange(len(y3))
+- Se muestran los tres tipos de grafica
 
-```![](https://github.com/DAJO2/LAB2-/blob/main/)
+  
+![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
