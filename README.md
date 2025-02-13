@@ -94,11 +94,11 @@ f_welch, psd = welch(signal, fs, nperseg=1024)
 -Densidad espectral de potencia(PSD)
 ![](https://github.com/DAJO2/LAB2-/blob/main/DENSIDADESPECTRAL.png)
 
-Se analizaron los estadísticos descriptivos en función de la frecuencia para caracterizar la señal EEG en el dominio espectral. Se calcularon la frecuencia media y la frecuencia mediana para identificar la tendencia central de la distribución de frecuencias, junto con la desviación estándar, que mide la dispersión de la señal respecto a su frecuencia promedio. Además, se generó un histograma de frecuencias, permitiendo visualizar la distribución de la energía en diferentes rangos del espectro y confirmar la predominancia de ciertas bandas, como la alfa (8-13 Hz), característica del estado de reposo con ojos cerrados.
+Se analizaron los estadísticos descriptivos en función de la frecuencia para caracterizar la señal EEG en el dominio espectral. Se calcularon la frecuencia media y la frecuencia mediana para identificar la tendencia central de la distribución de frecuencias, junto con la desviación estándar, que mide la dispersión de la señal respecto a su frecuencia promedio. Además, se generó un histograma de frecuencias, permitiendo visualizar la distribución de la energía en diferentes rangos del espectro en estado de reposo con ojos cerrados.
 ``` pitón
 freq_mean = np.sum(f_welch * psd) / np.sum(psd)
 freq_median = f_welch[np.cumsum(psd) >= np.sum(psd) / 2][0]
 freq_std = np.sqrt(np.sum(psd * (f_welch - freq_mean) ** 2) / np.sum(psd))
 ```
 -Histograma señal EEG
-![](https://github.com/DAJO2/LAB2-/blob/main/DENSIDADESPECTRAL.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/HISTOGRAMA.png)
