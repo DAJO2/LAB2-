@@ -3,6 +3,7 @@
 En el análisis de señales y sistemas, sirven para comprender la interacción entre señales y los sistemas que las procesan son fundamentales para múltiples aplicaciones en ingeniería. Se encuentran tres operaciones matemáticas que juegan un papel clave en este estudio: la convolución, la correlación y las transformadas.
 La convolución permite determinar cómo un sistema responde a una señal de entrada, siendo esencial en el análisis de sistemas lineales e invariantes en el tiempo (LTI). La correlación, por su parte, mide la similitud entre dos señales a lo largo del tiempo, siendo una herramienta valiosa en el procesamiento de señales, la detección de patrones y la reducción de ruido. Las transformadas por su parte, como la de Fourier y la de Laplace, facilitan el análisis de señales en el dominio de la frecuencia. Estas herramientas permiten descomponer señales en sus componentes fundamentales, optimizando tareas como el diseño de filtros y la compresión de datos.
 ## PROCEDIMIENTO 
+### CONVOLUCIÓN
 Se realizó un estudio con tres estudiantes, donde se estableció un sistema y una señal de entrada basados en sus datos personales. Para cada estudiante:
 
 Se definió el sistema h[n] como una secuencia discreta formada por los dígitos de su código de estudiante.
@@ -32,9 +33,27 @@ El cálculo de la convolución se realizó en dos etapas:
     n_y1 = np.arange(len(y1))
     n_y2 = np.arange(len(y2))
     n_y3 = np.arange(len(y3))
-- Se muestran los tres tipos de grafica
+- Se muestran los tres tipos de convolucion:
 
   
 ![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
 ![](https://github.com/DAJO2/LAB2-/blob/main/GABRIELANARANJOCONVOLUCION.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/CARLOSBERNALCONVOLUCION.png)
+
+### CORRELACIÓN
+Para encontrar la correlación entre las señales, se definieron dos señales de tiempo discreto, muestreadas con un período de muestreo 
+Ts =1.25 ms:
+  ``` pitón
+  fs = 1 / 1.25e-3
+  n = np.arange(9)
+  ts = 1.25e-3
+
+  x1 = np.cos(2 * np.pi * 100 * n * ts)
+  x2 = np.sin(2 * np.pi * 100 * n * ts)
+
+  y = np.correlate(x1, x2, mode='full')
+
+  r = np.corrcoef(x1, x2)[0, 1]
+```
+-se observa su grafica:
 ![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
