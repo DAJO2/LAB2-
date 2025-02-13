@@ -55,7 +55,7 @@ Ts =1.25 ms:
 
   r = np.corrcoef(x1, x2)[0, 1]
 ```
--Se observa que ambas señales son funciones armónicas con una frecuencia de 100 Hz y están desfasadas 90° entre sí (una es un coseno y la otra un seno):
+- Se observa que ambas señales son funciones armónicas con una frecuencia de 100 Hz y están desfasadas 90° entre sí (una es un coseno y la otra un seno):
 ![](https://github.com/DAJO2/LAB2-/blob/main/SEÑALES_SIN_COS.png)
 El Coeficiente de correlación de Pearson: -0.00000000000000002675899923417194801263392048393010
 Este número es prácticamente cero, lo que indica que las señales x1[n] (coseno) y x2[n] (seno) son no correlacionadas en promedio.
@@ -88,10 +88,10 @@ freqs = np.fft.fftfreq(N, d=1/fs)
 spectrum = np.abs(fft(signal))
 f_welch, psd = welch(signal, fs, nperseg=1024)
 ```
--Transformada de Furier de la señal EEG
+- Transformada de Furier de la señal EEG
 ![](https://github.com/DAJO2/LAB2-/blob/main/TRANSFORMADADEFOURIER.png)
 
--Densidad espectral de potencia(PSD)
+- Densidad espectral de potencia(PSD)
 ![](https://github.com/DAJO2/LAB2-/blob/main/DENSIDADESPECTRAL.png)
 
 Se analizaron los estadísticos descriptivos en función de la frecuencia para caracterizar la señal EEG en el dominio espectral. Se calcularon la frecuencia media y la frecuencia mediana para identificar la tendencia central de la distribución de frecuencias, junto con la desviación estándar, que mide la dispersión de la señal respecto a su frecuencia promedio. Además, se generó un histograma de frecuencias, permitiendo visualizar la distribución de la energía en diferentes rangos del espectro en estado de reposo con ojos cerrados.
@@ -100,12 +100,12 @@ freq_mean = np.sum(f_welch * psd) / np.sum(psd)
 freq_median = f_welch[np.cumsum(psd) >= np.sum(psd) / 2][0]
 freq_std = np.sqrt(np.sum(psd * (f_welch - freq_mean) ** 2) / np.sum(psd))
 ```
--Histograma señal EEG
+- Histograma señal EEG
 ![](https://github.com/DAJO2/LAB2-/blob/main/HISTOGRAMA.png)
 
--Estadisticos descriptivos
+- Estadisticos descriptivos
 
-![](https://github.com/DAJO2/LAB2-/blob/main/HISTOGRAMA.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/Capturadepantalla2025-02-13065636.png)
 #### Requirements:
 - python 3.9
 - matplotlib
