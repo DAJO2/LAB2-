@@ -36,5 +36,5 @@ El cálculo de la convolución se realizó en dos etapas:
 
   
 ![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
-![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/GABRIELANARANJOCONVOLUCION.png)
 ![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
