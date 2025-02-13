@@ -1,7 +1,7 @@
 # LAB2-Convolución, correlación y transformación 
 ## INTRODUCCION 
 En el análisis de señales y sistemas, sirven para comprender la interacción entre señales y los sistemas que las procesan son fundamentales para múltiples aplicaciones en ingeniería. Se encuentran tres operaciones matemáticas que juegan un papel clave en este estudio: la convolución, la correlación y las transformadas.
-La convolución permite determinar cómo un sistema responde a una señal de entrada, siendo esencial en el análisis de sistemas lineales e invariantes en el tiempo (LTI). La correlación, por su parte, mide la similitud entre dos señales a lo largo del tiempo, siendo una herramienta valiosa en el procesamiento de señales, la detección de patrones y la reducción de ruido. Las transformadas por su parte, como la de Fourier y la de Laplace, facilitan el análisis de señales en el dominio de la frecuencia. Estas herramientas permiten descomponer señales en sus componentes fundamentales, optimizando tareas como el diseño de filtros y la compresión de datos.
+La convolución permite determinar cómo un sistema responde a una señal de entrada, siendo esencial en el análisis de sistemas lineales e invariantes en el tiempo (LTI). La correlación, por su parte, mide la similitud entre dos señales a lo largo del tiempo, siendo una herramienta valiosa en el procesamiento de señales, la detección de patrones y la reducción de ruido. Las transformadas por su parte, como la de Fourier, facilitan el análisis de señales en el dominio de la frecuencia. Estas herramientas permiten descomponer señales en sus componentes fundamentales, optimizando la compresión de datos.
 ## PROCEDIMIENTO 
 ### CONVOLUCIÓN
 Se realizó un estudio con tres estudiantes, donde se estableció un sistema y una señal de entrada basados en sus datos personales. Para cada estudiante:
@@ -60,8 +60,36 @@ Ts =1.25 ms:
 El Coeficiente de correlación de Pearson: -0.00000000000000002675899923417194801263392048393010
 Este número es prácticamente cero, lo que indica que las señales x1[n] (coseno) y x2[n] (seno) son no correlacionadas en promedio.
  ¿Por qué es casi cero?
-Matemáticamente, la correlación entre un coseno y un seno de la misma frecuencia es cero, ya que están desfasados 90°. Esto indica que, en el dominio del tiempo, las señales son ortogonales y no presentan una relación lineal directa.
+La correlación entre un coseno y un seno de la misma frecuencia es cero, ya que están desfasados 90°. Esto indica que, en el dominio del tiempo, las señales son ortogonales y no presentan una relación lineal directa.
 ### TRANSFORMADA
 Por medio de la pagina de physionet se descargo una señal tipo EEG en reposo con ojos cerrados debido a que con los ojos cerrados, el cerebro genera predominantemente ondas alfa en la región occipital y parietal, estas ondas son clave en estudios de neurofisiología y sirven como referencia para identificar patrones normales de actividad cerebral. Ademas a esto se reduce la influencia de estímulos visuales en la actividad cerebral, permitiendo un análisis más limpio de la señal EEG sin artefactos inducidos por el parpadeo o el procesamiento visual. Donde la señal fue grabada con una tasa de 160 muestras por segundo.
-![](https://github.com/DAJO2/LAB2-/blob/main/SEÑALES_SIN_COS.png)
+![](https://github.com/DAJO2/LAB2-/blob/main/SENALFT.png)
 
+Para analizar la señal EEG en reposo con ojos cerrados, es fundamental calcular sus características en el dominio del tiempo. Esto incluye estadísticos descriptivos y frecuencia de muestreo, los que se calcularon por medio de estas funciones:
+ ``` pitón
+num_signals = edf.signals_in_file
+fs = edf.getSampleFrequency(0)
+signal_labels = edf.getSignalLabels()
+
+signal = edf.readSignal(0)
+edf.close()
+
+time = np.arange(len(signal)) / fs
+
+data_mean = np.mean(signal)
+data_std = np.std(signal, ddof=1)
+data_var = np.var(signal, ddof=1)
+data_median = np.median(signal)
+```
+Se aplica la Transformada de Fourier (TF) ya que permite analizar la señal EEG en el dominio de la frecuencia, descomponiéndola en sus componentes espectrales (Power Spectral Density, PSD) que indica cómo se distribuye la energía de la señal en el espectro de frecuencias.
+ ``` pitón
+N = len(signal)
+freqs = np.fft.fftfreq(N, d=1/fs)
+spectrum = np.abs(fft(signal))
+f_welch, psd = welch(signal, fs, nperseg=1024)
+```
+-Transformada de Furier de la señal EEG
+![](https://github.com/DAJO2/LAB2-/blob/main/SENALFT.png)
+
+-Densidad espectral de potencia(PSD)
+![](https://github.com/DAJO2/LAB2-/blob/main/SENALFT.png)
