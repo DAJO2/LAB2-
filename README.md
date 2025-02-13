@@ -9,9 +9,9 @@ Se definió el sistema h[n] como una secuencia discreta formada por los dígitos
 Se definió la señal de entrada x[n] como la secuencia compuesta por los dígitos de su número de cédula.
 A partir de estas secuencias, se obtuvo la señal de salida y[n] mediante la operación de convolución discreta.
 El cálculo de la convolución se realizó en dos etapas:
-- Cálculo manual con sumatorias, aplicando la definición de convolución discreta para encontrar y[n].
-- Implementación en Python, utilizando funciones numéricas para verificar los resultados obtenidos manualmente y agilizar el cálculo para cada conjunto de datos.
-  
+- Cálculo manual con sumatorias , aplicando la definición de convolución discreta para encontrar y[n].
+- Implementación en Python, utilizando funciones numéricas para verificar los resultados obtenidos manualmente y se agiliza el cálculo para cada conjunto de datos realizando la convolución discreta entre señales de entrada.
+
   ```pitón
    #Definir señales x(n) e h(n) para tres casos
     x1 = np.array([1, 0, 1, 4, 7, 3, 7, 8, 8, 6])
