@@ -55,5 +55,13 @@ Ts =1.25 ms:
 
   r = np.corrcoef(x1, x2)[0, 1]
 ```
--se observa su grafica:
-![](https://github.com/DAJO2/LAB2-/blob/main/DIEGOJIMENEZCONVOLUCION.png)
+-Se observa que ambas señales son funciones armónicas con una frecuencia de 100 Hz y están desfasadas 90° entre sí (una es un coseno y la otra un seno):
+![](https://github.com/DAJO2/LAB2-/blob/main/SEÑALES_SIN_COS.png)
+El Coeficiente de correlación de Pearson: -0.00000000000000002675899923417194801263392048393010
+Este número es prácticamente cero, lo que indica que las señales x1[n] (coseno) y x2[n] (seno) son no correlacionadas en promedio.
+ ¿Por qué es casi cero?
+Matemáticamente, la correlación entre un coseno y un seno de la misma frecuencia es cero, ya que están desfasados 90°. Esto indica que, en el dominio del tiempo, las señales son ortogonales y no presentan una relación lineal directa.
+### TRANSFORMADA
+Por medio de la pagina de physionet se descargo una señal tipo EEG en reposo con ojos cerrados debido a que con los ojos cerrados, el cerebro genera predominantemente ondas alfa en la región occipital y parietal, estas ondas son clave en estudios de neurofisiología y sirven como referencia para identificar patrones normales de actividad cerebral. Ademas a esto se reduce la influencia de estímulos visuales en la actividad cerebral, permitiendo un análisis más limpio de la señal EEG sin artefactos inducidos por el parpadeo o el procesamiento visual. Donde la señal fue grabada con una tasa de 160 muestras por segundo.
+![](https://github.com/DAJO2/LAB2-/blob/main/SEÑALES_SIN_COS.png)
+
